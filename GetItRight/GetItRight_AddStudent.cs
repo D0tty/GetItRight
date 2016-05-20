@@ -41,6 +41,7 @@ namespace GetItRight
                 this.Student.Name = this._Name.Text;
                 this.Student.FirstName = this.FirstName.Text;
                 this.Student.Login = this.Login.Text;
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else

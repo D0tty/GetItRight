@@ -41,5 +41,9 @@ namespace GetItRight
             this._lenght ++;
         }
 
+        public void PopLast()
+        {
+            this.Students.RemoveAt(this._lenght-1);
+        }
     }
 }

@@ -42,6 +42,8 @@
             this.abouttToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TreeViewStudents = new System.Windows.Forms.TreeView();
             this.ShowData = new System.Windows.Forms.RichTextBox();
+            this.Loggle = new System.Windows.Forms.Button();
+            this.SendMail = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,21 +81,21 @@
             // setupToolStripMenuItem
             // 
             this.setupToolStripMenuItem.Name = "setupToolStripMenuItem";
-            this.setupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.setupToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.setupToolStripMenuItem.Text = "Setup";
             this.setupToolStripMenuItem.Click += new System.EventHandler(this.setupToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -147,7 +149,7 @@
             this.TreeViewStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TreeViewStudents.Location = new System.Drawing.Point(0, 27);
             this.TreeViewStudents.Name = "TreeViewStudents";
-            this.TreeViewStudents.Size = new System.Drawing.Size(201, 307);
+            this.TreeViewStudents.Size = new System.Drawing.Size(201, 278);
             this.TreeViewStudents.TabIndex = 1;
             // 
             // ShowData
@@ -159,11 +161,33 @@
             this.ShowData.TabIndex = 2;
             this.ShowData.Text = "";
             // 
+            // Loggle
+            // 
+            this.Loggle.Location = new System.Drawing.Point(0, 311);
+            this.Loggle.Name = "Loggle";
+            this.Loggle.Size = new System.Drawing.Size(100, 23);
+            this.Loggle.TabIndex = 3;
+            this.Loggle.Text = "Toggle";
+            this.Loggle.UseVisualStyleBackColor = true;
+            this.Loggle.Click += new System.EventHandler(this.Loggle_Click);
+            // 
+            // SendMail
+            // 
+            this.SendMail.Location = new System.Drawing.Point(103, 311);
+            this.SendMail.Name = "SendMail";
+            this.SendMail.Size = new System.Drawing.Size(100, 23);
+            this.SendMail.TabIndex = 4;
+            this.SendMail.Text = "Send Mail";
+            this.SendMail.UseVisualStyleBackColor = true;
+            this.SendMail.Click += new System.EventHandler(this.SendMail_Click);
+            // 
             // GetItRight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 334);
+            this.Controls.Add(this.SendMail);
+            this.Controls.Add(this.Loggle);
             this.Controls.Add(this.ShowData);
             this.Controls.Add(this.TreeViewStudents);
             this.Controls.Add(this.menuStrip1);
@@ -195,6 +219,8 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
+        private System.Windows.Forms.Button Loggle;
+        private System.Windows.Forms.Button SendMail;
     }
 }
 

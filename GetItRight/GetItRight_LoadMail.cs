@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GetItRight
@@ -15,13 +8,23 @@ namespace GetItRight
         public GetItRight_LoadMail()
         {
             InitializeComponent();
+            this.FileName.KeyPress += (sender, args) =>
+            {
+                if ((Keys)args.KeyChar == Keys.Enter)
+                {
+                    Load_Click(this, EventArgs.Empty);
+                }
+            }; //Fast Input
         }
 
         private void Load_Click(object sender, EventArgs e)
         {
             if (this.FileName.Text != string.Empty)
             {
-                Mail.LoadConf(this.FileName.Text);
+                if (Mail.LoadConf(this.FileName.Text))
+                {
+                    Quit_Click(this,EventArgs.Empty);
+                }
             }
         }
 

@@ -70,24 +70,31 @@ namespace GetItRight
             }
         }
 
-        public static void LoadConf(string filename)
+        public static bool LoadConf(string filename)
         {
             if (File.Exists(".\\" + filename))
             {
-                FileStream fs = new FileStream(".\\"+filename,FileMode.Open);
+                FileStream fs = new FileStream(".\\" + filename, FileMode.Open);
                 byte[] data = new byte[fs.Length];
-                fs.Read(data, 0, (int)fs.Length);
+                fs.Read(data, 0, (int) fs.Length);
                 fs.Close();
                 string[] file = Encoding.ASCII.GetString(data).Split('\n');
                 if (file.Length == 14)
                 {
-                    MailBuild(file[1],file[3],file[5],Int32.Parse(file[7]),file[9],file[11],file[13]==true.ToString());
+                    MailBuild(file[1], file[3], file[5], Int32.Parse(file[7]), file[9], file[11],
+                        file[13] == true.ToString());
                     MessageBox.Show(@"Conf Loaded correctly");
+                    return true;
                 }
                 else
                 {
                     MessageBox.Show(@"The Config File is corrupted");
+                    return false;
                 }
+            }
+            else
+            {
+                return false;
             }
         }
 
