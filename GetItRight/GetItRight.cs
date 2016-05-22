@@ -41,6 +41,7 @@ namespace GetItRight
             else
             {
                 this.StudentHandler.PopLast();
+                this.StudentHandler.UpdateLengthMinus();
             }
         }
 
