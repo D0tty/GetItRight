@@ -79,11 +79,23 @@
     <Compile Include="GetItRight_AddStudent.Designer.cs">
       <DependentUpon>GetItRight_AddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetItRight_LoadList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetItRight_LoadList.Designer.cs">
+      <DependentUpon>GetItRight_LoadList.cs</DependentUpon>
+    </Compile>
     <Compile Include="GetItRight_LoadMail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GetItRight_LoadMail.Designer.cs">
       <DependentUpon>GetItRight_LoadMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetItRight_SaveList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetItRight_SaveList.Designer.cs">
+      <DependentUpon>GetItRight_SaveList.cs</DependentUpon>
     </Compile>
     <Compile Include="GetItRight_SaveMail.cs">
       <SubType>Form</SubType>
@@ -111,8 +123,14 @@
     <EmbeddedResource Include="GetItRight_AddStudent.resx">
       <DependentUpon>GetItRight_AddStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GetItRight_LoadList.resx">
+      <DependentUpon>GetItRight_LoadList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GetItRight_LoadMail.resx">
       <DependentUpon>GetItRight_LoadMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetItRight_SaveList.resx">
+      <DependentUpon>GetItRight_SaveList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GetItRight_SaveMail.resx">
       <DependentUpon>GetItRight_SaveMail.cs</DependentUpon>

@@ -9,6 +9,14 @@ namespace GetItRight
         {
             InitializeComponent();
             GetMailData();
+            this.FileName.KeyPress += (sender, args) =>
+            {
+                if ((Keys)args.KeyChar == Keys.Enter)
+                {
+                    Save_Click(this, EventArgs.Empty);
+                    Quit_Click(this,EventArgs.Empty);
+                }
+            }; //Fast Input
         }
 
         private void GetMailData()

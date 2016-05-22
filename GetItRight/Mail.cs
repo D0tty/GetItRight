@@ -66,7 +66,7 @@ namespace GetItRight
             }
             else
             {
-                MessageBox.Show("Error with the filename");
+                MessageBox.Show(@"Error with the filename");
             }
         }
 

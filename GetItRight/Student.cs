@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GetItRight
+﻿namespace GetItRight
 {
     public class Student
     {
@@ -16,6 +9,14 @@ namespace GetItRight
         public string Data;
 
         public Student() {}
+
+        public Student(int _id, string _name, string _firstName, string _login)
+        {
+            this.Id = _id;
+            this.Name = _name;
+            this.FirstName = _firstName;
+            this.Login = _login;
+        }
 
         public void MakeData(string decision, string data)
         {
@@ -29,6 +30,15 @@ namespace GetItRight
         private string header(int len, char motif)
         {
             return (len == 0) ? "" : motif+header(len - 1, motif);
+        }
+
+        public string Save()
+        {
+            string data = "#Id\n" + this.Id + '\n';
+            data += "#Name\n" + this.Name + '\n';
+            data += "#FirstName\n" + this.FirstName + '\n';
+            data += "#Login\n" + this.Login + '\n';
+            return data;
         }
 
     }

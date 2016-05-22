@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GetItRight
@@ -42,7 +35,7 @@ namespace GetItRight
                 this.Student.FirstName = this.FirstName.Text;
                 this.Student.Login = this.Login.Text;
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                this.Dispose();
             }
             else
             {

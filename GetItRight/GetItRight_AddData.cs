@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GetItRight
@@ -20,7 +13,7 @@ namespace GetItRight
             this.Student = _student;
             #region recup last data for modif
 
-            if (this.Student.Data != null && this.Student.Data.Length > 0)
+            if (!string.IsNullOrEmpty(this.Student.Data))
             {
                 int end = 0;
                 string[] txt = this.Student.Data.Split('\n');
@@ -48,11 +41,11 @@ namespace GetItRight
             if (this.Decision.Text != string.Empty && this.Data.Text != string.Empty)
             {
                 this.Student.MakeData(this.DecisionConseil.Text,this.Data.Text);
-                this.Close();
+                this.Dispose();
             }
             else
             {
-                MessageBox.Show("You need to fill decision and resume.");
+                MessageBox.Show(@"You need to fill decision and resume.");
             }
         }
     }

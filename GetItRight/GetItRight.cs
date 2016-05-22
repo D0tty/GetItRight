@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GetItRight.Properties;
 
@@ -110,6 +103,7 @@ namespace GetItRight
                     if (this.TreeViewStudents.Nodes[i].Checked)
                     {
                         Mail.Send(this.StudentHandler[i].Data,new MailAddress(this.StudentHandler[i].Login+"@epita.fr"));
+                        this.TreeViewStudents.Nodes[i].Checked = false; 
                     }
                 }
             }
@@ -117,6 +111,19 @@ namespace GetItRight
             {
                 MessageBox.Show(@"Setupor load mail config first");
             }
+        }
+
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GetItRight_SaveList SaveList = new GetItRight_SaveList(this.StudentHandler);
+            SaveList.ShowDialog();
+        }
+
+        private void loadListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GetItRight_LoadList LoadList = new GetItRight_LoadList(this.StudentHandler);
+            LoadList.ShowDialog();
+            UpdateTreeView();
         }
     }
 }
