@@ -18,6 +18,12 @@ namespace GetItRight
                     Add_Click(this, EventArgs.Empty);
                 }
             }; //Fast Input
+            if (this.Student.Name != String.Empty && this.Student.Login != string.Empty)
+            {
+                this._Name.Text = this.Student.Name;
+                this.FirstName.Text = this.Student.FirstName;
+                this.Login.Text = this.Student.Login;
+            }
         }
 
         private void Reset_Click(object sender, EventArgs e)

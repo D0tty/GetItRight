@@ -42,8 +42,33 @@ namespace GetItRight
                 && this.SmtpLogin.Text != string.Empty
                 && this.SmtpPassword.Text != string.Empty)
             {
-                int port = Int32.Parse(this.SmtpPort.Text);
-                Mail.MailBuild(this.EmailFrom.Text,this.Subject.Text,this.SmtpHost.Text,port,this.SmtpLogin.Text,this.SmtpPassword.Text,this.SSLEnable.Checked);
+                int port=25;
+                bool error = false;
+                try
+                {
+                    port = Int32.Parse(this.SmtpPort.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: \nPort: " + ex.Message);
+                    error = true;
+                }
+                if (!error)
+                {
+                    try
+                    {
+                        Mail.MailBuild(this.EmailFrom.Text, this.Subject.Text, this.SmtpHost.Text, port, this.SmtpLogin.Text,
+                            this.SmtpPassword.Text, this.SSLEnable.Checked);
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Error: " + exception.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"You must fill all the form");
             }
         }
 

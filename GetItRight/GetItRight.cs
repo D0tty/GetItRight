@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Net.Mail;
 using System.Windows.Forms;
 using GetItRight.Properties;
@@ -9,6 +10,7 @@ namespace GetItRight
     {
         StudentHandler StudentHandler = new StudentHandler();
         private bool TreeAllState = false;
+        private int ShowedStudent;
 
         public GetItRight()
         {
@@ -16,6 +18,7 @@ namespace GetItRight
             this.StudentHandler = new StudentHandler();
             this.TreeViewStudents.NodeMouseDoubleClick += treeView1_NodeMouseDoubleClick;
             this.TreeViewStudents.NodeMouseHover += TreeViewStudentsOnNodeMouseHover;
+            this.ShowData.MouseDoubleClick += ModifData;
         }
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,16 +53,27 @@ namespace GetItRight
             }
         }
 
-        void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void ModifData(object sender, MouseEventArgs e)
         {
-            GetItRight_AddData AddData = new GetItRight_AddData(this.StudentHandler[e.Node.Index]);
-            AddData.ShowDialog();
-            UpdateTreeView(); //ah oui c'est salle et osef //will be patch next year XD
+            if (this.StudentHandler.Lenght > 0 && this.ShowedStudent < this.StudentHandler.Lenght)
+            {
+                GetItRight_AddData AddData = new GetItRight_AddData(this.StudentHandler[this.ShowedStudent]);
+                AddData.ShowDialog();
+                UpdateTreeView(); //ah oui c'est salle et osef //will be patch next year XD
+            }
+        }
+
+        private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            GetItRight_AddStudent ModifyStudent = new GetItRight_AddStudent(this.StudentHandler[e.Node.Index]);
+            ModifyStudent.ShowDialog();
+            UpdateTreeView(); // again it's ugly
         }
 
         private void TreeViewStudentsOnNodeMouseHover(object sender, TreeNodeMouseHoverEventArgs e)
         {
             this.ShowData.Text = this.StudentHandler[e.Node.Index].Data;
+            this.ShowedStudent = e.Node.Index;
         }
 
         private void abouttToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,6 +118,7 @@ namespace GetItRight
                     {
                         Mail.Send(this.StudentHandler[i].Data,new MailAddress(this.StudentHandler[i].Login+"@epita.fr"));
                         this.TreeViewStudents.Nodes[i].Checked = false; 
+                        this.TreeViewStudents.Nodes[i].BackColor = Color.ForestGreen;
                     }
                 }
             }

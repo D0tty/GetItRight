@@ -61,8 +61,7 @@ namespace GetItRight.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Copy Right 2016
-        ///Thomas  &apos;Dotty&apos; Michelot
+        ///   Recherche une chaîne localisée semblable à Thomas  &apos;Dotty&apos; Michelot
         ///thomas.michelot@epita.fr
         ///https://github.com/D0tty.
         /// </summary>

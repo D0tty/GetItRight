@@ -37,13 +37,14 @@ namespace GetItRight
             Mail.Message.Body = body;
             try
             {
-                Mail.Client.Send(Mail.Message);
+                //Mail.Client.Send(Mail.Message);
+                Mail.Client.SendMailAsync(Mail.Message);
             }
             catch (Exception e)
             {
                 MessageBox.Show(@"Error while sending the mail: "+ e.Message);
             }
-        } //TODO change Client.Send by AsyncSend to be faster / don't have in app frezzez
+        }
 
         public static void SaveConf(string filename)
         {
