@@ -59,6 +59,7 @@ namespace GetItRight
                     {
                         Mail.MailBuild(this.EmailFrom.Text, this.Subject.Text, this.SmtpHost.Text, port, this.SmtpLogin.Text,
                             this.SmtpPassword.Text, this.SSLEnable.Checked);
+                        this.Quit_Click(this,EventArgs.Empty);
                     }
                     catch (Exception exception)
                     {
