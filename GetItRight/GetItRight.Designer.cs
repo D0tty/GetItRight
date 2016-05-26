@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetItRight));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.addStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouttToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.TreeViewStudents = new System.Windows.Forms.TreeView();
             this.ShowData = new System.Windows.Forms.RichTextBox();
             this.Loggle = new System.Windows.Forms.Button();
@@ -50,7 +51,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.managementToolStripMenuItem});
+            this.managementToolStripMenuItem,
+            this.listToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(557, 24);
@@ -61,7 +63,6 @@
             // 
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loginInformationToolStripMenuItem,
-            this.createListToolStripMenuItem,
             this.quitToolStripMenuItem,
             this.abouttToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
@@ -99,37 +100,6 @@
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
-            // createListToolStripMenuItem
-            // 
-            this.createListToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadListToolStripMenuItem,
-            this.saveToolStripMenuItem1,
-            this.addStudentToolStripMenuItem});
-            this.createListToolStripMenuItem.Name = "createListToolStripMenuItem";
-            this.createListToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.createListToolStripMenuItem.Text = "List";
-            // 
-            // loadListToolStripMenuItem
-            // 
-            this.loadListToolStripMenuItem.Name = "loadListToolStripMenuItem";
-            this.loadListToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.loadListToolStripMenuItem.Text = "Load";
-            this.loadListToolStripMenuItem.Click += new System.EventHandler(this.loadListToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem1
-            // 
-            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
-            this.saveToolStripMenuItem1.Text = "Save";
-            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
-            // 
-            // addStudentToolStripMenuItem
-            // 
-            this.addStudentToolStripMenuItem.Name = "addStudentToolStripMenuItem";
-            this.addStudentToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.addStudentToolStripMenuItem.Text = "Add Student";
-            this.addStudentToolStripMenuItem.Click += new System.EventHandler(this.addStudentToolStripMenuItem_Click);
-            // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
@@ -143,6 +113,37 @@
             this.abouttToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.abouttToolStripMenuItem.Text = "About";
             this.abouttToolStripMenuItem.Click += new System.EventHandler(this.abouttToolStripMenuItem_Click);
+            // 
+            // listToolStripMenuItem
+            // 
+            this.listToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem1,
+            this.saveToolStripMenuItem2,
+            this.loadToolStripMenuItem2});
+            this.listToolStripMenuItem.Name = "listToolStripMenuItem";
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.listToolStripMenuItem.Text = "Students";
+            // 
+            // loadToolStripMenuItem1
+            // 
+            this.loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
+            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem1.Text = "Add Student";
+            this.loadToolStripMenuItem1.Click += new System.EventHandler(this.loadToolStripMenuItem1_Click);
+            // 
+            // saveToolStripMenuItem2
+            // 
+            this.saveToolStripMenuItem2.Name = "saveToolStripMenuItem2";
+            this.saveToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem2.Text = "Save";
+            this.saveToolStripMenuItem2.Click += new System.EventHandler(this.saveToolStripMenuItem2_Click);
+            // 
+            // loadToolStripMenuItem2
+            // 
+            this.loadToolStripMenuItem2.Name = "loadToolStripMenuItem2";
+            this.loadToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem2.Text = "Load";
+            this.loadToolStripMenuItem2.Click += new System.EventHandler(this.loadToolStripMenuItem2_Click);
             // 
             // TreeViewStudents
             // 
@@ -193,6 +194,7 @@
             this.Controls.Add(this.ShowData);
             this.Controls.Add(this.TreeViewStudents);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(573, 373);
             this.MinimumSize = new System.Drawing.Size(573, 373);
@@ -209,20 +211,20 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addStudentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abouttToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadListToolStripMenuItem;
         private System.Windows.Forms.TreeView TreeViewStudents;
         private System.Windows.Forms.RichTextBox ShowData;
         private System.Windows.Forms.ToolStripMenuItem loginInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
         private System.Windows.Forms.Button Loggle;
         private System.Windows.Forms.Button SendMail;
+        private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem2;
     }
 }
 

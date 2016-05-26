@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetItRight_SaveMail));
             this.EmailFrom = new System.Windows.Forms.TextBox();
             this.Subject = new System.Windows.Forms.TextBox();
             this.SmtpHost = new System.Windows.Forms.TextBox();
@@ -153,6 +154,7 @@
             this.Controls.Add(this.Subject);
             this.Controls.Add(this.SmtpHost);
             this.Controls.Add(this.EmailFrom);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GetItRight_SaveMail";
             this.Text = "Save Mail Config";
             this.ResumeLayout(false);

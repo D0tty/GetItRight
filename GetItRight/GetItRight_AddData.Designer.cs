@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetItRight_AddData));
             this._Name = new System.Windows.Forms.Label();
             this.Data = new System.Windows.Forms.RichTextBox();
             this.Decision = new System.Windows.Forms.Label();
@@ -88,6 +89,7 @@
             this.Controls.Add(this.Decision);
             this.Controls.Add(this.Data);
             this.Controls.Add(this._Name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(462, 362);
             this.MinimumSize = new System.Drawing.Size(462, 362);
             this.Name = "GetItRight_AddData";

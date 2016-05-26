@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetItRight_LoadMail));
             this.FileName = new System.Windows.Forms.TextBox();
             this._Load = new System.Windows.Forms.Button();
             this.Quit = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@
             // 
             this._Load.Location = new System.Drawing.Point(13, 40);
             this._Load.Name = "_Load";
-            this._Load.Size = new System.Drawing.Size(75, 23);
+            this._Load.Size = new System.Drawing.Size(100, 23);
             this._Load.TabIndex = 1;
             this._Load.Text = "Load";
             this._Load.UseVisualStyleBackColor = true;
@@ -55,7 +56,7 @@
             // 
             this.Quit.Location = new System.Drawing.Point(13, 70);
             this.Quit.Name = "Quit";
-            this.Quit.Size = new System.Drawing.Size(75, 23);
+            this.Quit.Size = new System.Drawing.Size(100, 23);
             this.Quit.TabIndex = 2;
             this.Quit.Text = "Quit";
             this.Quit.UseVisualStyleBackColor = true;
@@ -65,12 +66,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(136, 106);
+            this.ClientSize = new System.Drawing.Size(124, 98);
             this.Controls.Add(this.Quit);
             this.Controls.Add(this._Load);
             this.Controls.Add(this.FileName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GetItRight_LoadMail";
-            this.Text = "GetItRight_LoadMail";
+            this.Text = "Load Mail";
             this.ResumeLayout(false);
             this.PerformLayout();
 

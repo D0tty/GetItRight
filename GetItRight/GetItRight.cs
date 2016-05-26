@@ -27,24 +27,6 @@ namespace GetItRight
             //Environment.Exit(Environment.ExitCode);
         }
 
-        private void addStudentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.StudentHandler.AddStudent();
-            GetItRight_AddStudent AddStudent =
-                new GetItRight_AddStudent(this.StudentHandler[this.StudentHandler.Lenght - 1]); //I can use "Length - 1" without other verification 
-                                                                                                //because I allways adds a student before so Lenght is >= 1
-            DialogResult result = AddStudent.ShowDialog();
-            if (result != DialogResult.Cancel)
-            {
-                UpdateTreeView();
-            }
-            else
-            {
-                this.StudentHandler.PopLast();
-                this.StudentHandler.UpdateLengthMinus();
-            }
-        }
-
         private void UpdateTreeView()
         {
             this.TreeViewStudents.Nodes.Clear();
@@ -129,13 +111,31 @@ namespace GetItRight
             }
         }
 
-        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void loadToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.StudentHandler.AddStudent();
+            GetItRight_AddStudent AddStudent =
+                new GetItRight_AddStudent(this.StudentHandler[this.StudentHandler.Lenght - 1]); //I can use "Length - 1" without other verification 
+                                                                                                //because I allways adds a student before so Lenght is >= 1
+            DialogResult result = AddStudent.ShowDialog();
+            if (result != DialogResult.Cancel)
+            {
+                UpdateTreeView();
+            }
+            else
+            {
+                this.StudentHandler.PopLast();
+                this.StudentHandler.UpdateLengthMinus();
+            }
+        }
+
+        private void saveToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             GetItRight_SaveList SaveList = new GetItRight_SaveList(this.StudentHandler);
             SaveList.ShowDialog();
         }
 
-        private void loadListToolStripMenuItem_Click(object sender, EventArgs e)
+        private void loadToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             GetItRight_LoadList LoadList = new GetItRight_LoadList(this.StudentHandler);
             LoadList.ShowDialog();

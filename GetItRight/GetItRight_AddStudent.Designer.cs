@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetItRight_AddStudent));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -88,7 +89,7 @@
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(16, 96);
+            this.Reset.Location = new System.Drawing.Point(16, 94);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(75, 23);
             this.Reset.TabIndex = 5;
@@ -98,7 +99,7 @@
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(106, 96);
+            this.Add.Location = new System.Drawing.Point(106, 94);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(75, 23);
             this.Add.TabIndex = 4;
@@ -119,10 +120,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(215, 168);
             this.MinimumSize = new System.Drawing.Size(215, 168);
             this.Name = "GetItRight_AddStudent";
-            this.Text = "GetItRight_AddStudent";
+            this.Text = "Add Student";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetItRight_SaveList));
             this.FileName = new System.Windows.Forms.TextBox();
             this.Save = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -53,11 +54,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(124, 74);
+            this.ClientSize = new System.Drawing.Size(128, 74);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.FileName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GetItRight_SaveList";
-            this.Text = "GetItRight_SaveList";
+            this.Text = "Save List";
             this.ResumeLayout(false);
             this.PerformLayout();
 
